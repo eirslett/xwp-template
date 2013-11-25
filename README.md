@@ -24,12 +24,12 @@ Configure sbt:
 *project/build.properties*:
 
 ```
-sbt.version=0.12.3
+sbt.version=0.13.0
 ```
 
 *project/plugins.sbt*:
 ```
-addSbtPlugin("com.earldouglas" % "xsbt-web-plugin" % "0.3.0")
+addSbtPlugin("com.earldouglas" % "xsbt-web-plugin" % "0.5.0")
 ```
 
 *build.sbt*:
@@ -40,11 +40,13 @@ organization := "com.earldouglas"
 
 version := "0.1.0-SNAPSHOT"
 
-scalaVersion := "2.10.1"
+scalaVersion := "2.10.3"
 
 seq(webSettings :_*)
 
-libraryDependencies += "org.mortbay.jetty" % "jetty" % "6.1.22" % "container"
+libraryDependencies += "org.eclipse.jetty" % "jetty-webapp" % "9.1.0.v20131115" % "container"
+
+libraryDependencies += "org.eclipse.jetty" % "jetty-plus" % "9.1.0.v20131115" % "container"
 
 libraryDependencies += "javax.servlet" % "servlet-api" % "2.5" % "provided"
 ```
@@ -105,7 +107,7 @@ From sbt, run the command `container:start`:
 
 ```
 > container:start
-[info] jetty-6.1.22
+[info] jetty-9.1.0.v20131115
 [info] NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
 [info] Started SelectChannelConnector@0.0.0.0:8080
 [success] Total time: 0 s, completed May 27, 2013 11:29:14 AM
