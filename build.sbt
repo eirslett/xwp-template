@@ -13,3 +13,7 @@ libraryDependencies += "org.eclipse.jetty" % "jetty-webapp" % "9.1.0.v20131115" 
 libraryDependencies += "org.eclipse.jetty" % "jetty-plus" % "9.1.0.v20131115" % "container"
 
 libraryDependencies += "javax.servlet" % "servlet-api" % "2.5" % "provided"
+
+configurationXml in container.Configuration := <Configure class="org.mortbay.jetty.webapp.WebAppContext">
+                                                 <Set name="port">8088</Set>
+                                               </Configure>
